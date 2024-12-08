@@ -1,0 +1,97 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #701cf7;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Make logo bold and white */
+nav .logo h2 {
+    margin: 0;
+    font-weight: bold;
+    color: white;
+}
+
+/* Navigation links container */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center text inside Portfolio container */
+nav ul li {
+    display: flex;
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Horizontal center */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-align: center; /* Ensure text is centered */
+}
+
+/* Hover effect for navigation items */
+nav ul li:hover {
+    background-color: #b1a5ff5d;
+    border-radius: 5px;
+}
+
+/* Dropdown menu */
+nav ul li.dropdown {
+    position: relative;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #701cf7;
+    border-radius: 5px;
+
+    margin-top: 150px;
+    min-width: 110px;
+    z-index: 1;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li .dropdown-content a {
+    padding: 10px 0px 10px 0px;
+    display: block;
+}
+
+
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Scroll to top button */
+#dark-mode-icon {
+    cursor: pointer;
+    font-size: 20px;
+}
