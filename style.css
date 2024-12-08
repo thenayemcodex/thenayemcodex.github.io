@@ -1,97 +1,189 @@
-/* General styling */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box;
 }
 
+/* Navbar Styles */
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: #2b08f5;
     padding: 10px 20px;
-    background-color: #701cf7;
-    color: #fff;
-    position: fixed;
-    width: 100%;
+    position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
-/* Make logo bold and white */
 nav .logo h2 {
-    margin: 0;
-    font-weight: bold;
     color: white;
+    margin: 0;
 }
 
-/* Navigation links container */
-nav ul {
+.nav-links {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     gap: 20px;
-    margin: 0;
-    padding: 0;
 }
 
-/* Center text inside Portfolio container */
-nav ul li {
-    display: flex;
-    align-items: center; /* Vertical center */
-    justify-content: center; /* Horizontal center */
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
-    text-align: center; /* Ensure text is centered */
-}
-
-/* Hover effect for navigation items */
-nav ul li:hover {
-    background-color: #b1a5ff5d;
+.nav-links li {
+    list-style: none;
+    align-self: center;
+    max-height: 60px;
+    padding: 8px 10px;
     border-radius: 5px;
 }
 
-/* Dropdown menu */
-nav ul li.dropdown {
+.nav-links li:hover {
+    background-color: #d7d1fc4d;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.nav-links .dropdown {
     position: relative;
 }
 
-nav ul li .dropdown-content {
+.nav-links .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #701cf7;
-    border-radius: 5px;
+    background-color: #2b08f5;
+    min-width: 200px;
+    top: 100%;
+    left: 0;
+    z-index: 200;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
-    margin-top: 150px;
-    min-width: 110px;
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Ensure dropdown-content takes full width */
+.dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    width: 100%;
 }
 
-nav ul li:hover .dropdown-content {
+/* Ensure each list item inside the dropdown takes full width */
+.dropdown-content li {
+    width: 100%;
+    padding: 8px 16px;
+}
+
+.dropdown-content li a {
+    text-decoration: none;
     display: block;
+    width: 100%;
+    color: black;
+    padding: 10px;
 }
 
-nav ul li .dropdown-content a {
-    padding: 10px 0px 10px 0px;
-    display: block;
-}
-
-
-
-/* Dark Mode */
+/* Dark Mode Styles */
 body.dark-mode {
-    background-color: #333;
-    color: #fff;
+    background-color: #121212; /* Dark background */
+    color: white; /* Light text */
 }
 
-/* Scroll to top button */
+body.dark-mode .nav-links li a {
+    color: white; /* Change text color in navbar */
+}
+
+body.dark-mode table {
+    background-color: #333; /* Dark background for the table */
+    color: white; /* Light text in the table */
+}
+
+body.dark-mode table th {
+    background-color: #444; /* Darker header background */
+}
+
+/* Dark Mode Icon Styling */
 #dark-mode-icon {
+    font-size: 24px;
     cursor: pointer;
-    font-size: 20px;
+}
+
+/* Contact Section Styling */
+section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #1a01f727;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .dropdown-content {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-links {
+        gap: 10px;
+    }
+
+    table th, table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/* Table Responsiveness */
+@media screen and (max-width: 600px) {
+    table {
+        font-size: 12px;
+    }
+
+    table th, table td {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
 }
